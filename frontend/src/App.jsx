@@ -10,7 +10,7 @@ function App() {
  
 
   const handleReview = async () => {
-    const res = await fetch("http://https://ai-code-reviewer-z5o7.onrender.com/ai/get-review", {
+    const res = await fetch("https://ai-code-reviewer-7507.onrender.com/ai/get-review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
