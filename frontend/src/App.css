@@ -115,3 +115,67 @@ pre .comment {
     transform: rotate(360deg);
   }
 }
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+  width:100%;
+  height:100%;
+  background:#111827;
+  font-family:sans-serif;
+}
+
+.main{
+  width:100%;
+  height:100vh;
+  display:flex;
+  gap:20px;
+  padding:20px;
+}
+
+.left,
+.right{
+  flex:1;
+  height:100%;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.left{
+  background:#5f6997;
+  display:flex;
+  flex-direction:column;
+}
+
+.left textarea{
+  flex:1;
+  resize:none;
+  border:none;
+  outline:none;
+  background:transparent;
+  color:white;
+  padding:20px;
+  font-size:18px;
+}
+
+.left button{
+  border:none;
+  padding:18px;
+  background:linear-gradient(to right,#3b82f6,#06b6d4);
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.right{
+  background:#1f2937;
+  color:white;
+  padding:20px;
+  overflow:auto;
+}

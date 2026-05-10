@@ -10,7 +10,7 @@ function App() {
  
 
   const handleReview = async () => {
-    const res = await fetch("http://localhost:3000/ai/get-review", {
+    const res = await fetch("http://https://ai-code-reviewer-z5o7.onrender.com/ai/get-review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,9 +37,10 @@ function App() {
       
 
       <div className="right">
-        <pre>{review}</pre>
-        <markdown>{review}</markdown>
-      </div>
+  <ReactMarkdown>
+    {review}
+  </ReactMarkdown>
+</div>
     </main>
   );
 }

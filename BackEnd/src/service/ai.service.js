@@ -6,15 +6,25 @@ dotenv.config();
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY);
 
 async function getAIReview(prompt) {
-  const model = genAI.getGenerativeModel({
-    model: "gemini-3-flash-preview",
-     systemInstruction: "You are a helpful code reviewer. Provide constructive feedback on the provided code snippet, highlighting potential issues and suggesting improvements. Focus on code quality, readability, and best practices."
-  });
 
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
+  try {
 
-  return response.text();
+    const model = genAI.getGenerativeModel({
+      model: "gemini-1.5-flash",
+      systemInstruction:
+        "You are a helpful code reviewer.",
+    });
+
+    const result = await model.generateContent(prompt);
+
+    return result.response.text();
+
+  } catch (error) {
+
+    console.log(error);
+
+    throw error;
+
+  }
+
 }
-
-module.exports = { getAIReview };
